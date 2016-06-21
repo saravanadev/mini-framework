@@ -16,6 +16,8 @@ class Application
 
 		if(isset($_GET['url']))
 			$url = $this->parseUrl($_GET['url']);
+		else
+			$url[0]=$route['default_controller'];
 
 		if(file_exists(APP_DIR.'controllers/'.$url[0].'.php'))
 		{
